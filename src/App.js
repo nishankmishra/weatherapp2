@@ -17,7 +17,7 @@ export default function App() {
 
 
   useEffect(() => {
-    var url = ` https://api.openweathermap.org/data/2.5/weather?q=${city}andunits=metric&appid=2203e8d6434a0cee809e7ad8f8e69490`;
+    var url = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2203e8d6434a0cee809e7ad8f8e69490`;
     axios
       .get(url)
       .then((res) => {
