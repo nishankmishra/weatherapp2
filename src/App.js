@@ -9,7 +9,7 @@ import Loading from "./Components/Loading";
 
 
 export default function App() {
-  const [city, setcity] = useState("khurja");
+  const [city, setcity] = useState("Ghaziabda");
   const [upcoming, setupcoming] = useState([]);
   const [data, setdata] = useState(false);
   const [bg, setbg] = useState("");
