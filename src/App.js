@@ -17,7 +17,7 @@ export default function App() {
 
 
   useEffect(() => {
-    var url = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2203e8d6434a0cee809e7ad8f8e69490`;
+    var url = ` https://api.openweathermap.org/data/2.5/weather?q=${city}andunits=metric&appid=2203e8d6434a0cee809e7ad8f8e69490`;
     axios
       .get(url)
       .then((res) => {
@@ -70,15 +70,15 @@ export default function App() {
           <InputField cityFunc={cityChange} error={err} />
           <Weather
             cityName={`${data.name} ${data.sys.country}`}
-            cityTemp={Math.floor(data.main.temp / 10)}
+            cityTemp={Math.floor(data.main.temp)}
             description={data.weather[0].description}
             icon={data.weather[0].icon}
           />
           <Intro
             sunrise={new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
             sunset={new Date(data.sys.sunset * 1000).toLocaleTimeString()}
-            maximum={Math.floor(data.main.temp_max / 10)}
-            minimum={Math.floor(data.main.temp_min / 10)}
+            maximum={Math.floor(data.main.temp_max )}
+            minimum={Math.floor(data.main.temp_min )}
             humidity={data.main.humidity}
             cloud={data.clouds.all}
             visibility={Math.floor(data.visibility / 1000)}
